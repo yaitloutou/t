@@ -10,25 +10,26 @@
 <span class="author">
 
   {% if _author %}
-    {% if _author.name %}
+    {% if _author.name %} <!-- he has a name ? -->
       {% capture author %}{{_author.name}}{% endcapture %}
-    {% else %}
+    {% else %} <!-- then, he is the name -->
       {% capture author %}{{_author}}{% endcapture %}
     {% endif %}
 
-    {% if _author.about %}
-      {% capture about %}{{ _author.about }}{% endcapture %}
-      {% assign target = '_blank' %}
+    {% if _author.url %}
+      {% capture url %}{{ _author.url }}{% endcapture %}
+      {% assign target = '_blank' %} <!-- new tab -->
     {% endif %}
 
-  {% else %}
+  {% else %} <!-- post author not specified => use defult  -->
     {% capture author %}{{ admin.name }}{% endcapture %}
-    {% assign about = '/about' %}
+    {% assign url = '/about' %}
     {% assign target = '_self' %}
   {% endif %}
 
-  {% if about %}<a href={{about}} target={{target}} title="{{ author | lstrip }}" rel="author">{% endif %}
+  {% if url %}<a href={{url}} target={{target}} title="{{ author | lstrip }}" rel="author">{% endif %}
 
   {{author}}
-  {% if about %}</a>{% endif %}
+
+  {% if url %}</a>{% endif %}
 </span>
