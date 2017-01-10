@@ -1,6 +1,6 @@
 # file type
 *.gem
-
+*.bk
 # jekyll dotfile
 .bundle
 .sass-cache
@@ -21,3 +21,4 @@ gh-md-toc
 # Exceeption
 ## `.gitkeep` are placeholder file, added to empty directory to create and keep
 !/**/.gitkeep
+index.md.bk
