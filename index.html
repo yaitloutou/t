@@ -1,6 +1,6 @@
 ---
 layout: default
-title: My Blog
+title: Home
 ---
 
 <!-- This loops through the paginated posts -->
@@ -17,9 +17,7 @@ title: My Blog
   {% endif %}
   {% comment %}post footer{% endcomment %}
   <footer>
-    {% if post.author %}
-      {{post.author}}
-    {% endif %}
+    {% include author.html %}
     {% if post.categories != empty %}
     <div id="post-categories" class="info">{% include categories.html %}</div>
     {% endif %}

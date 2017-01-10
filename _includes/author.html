@@ -1,14 +1,23 @@
+{% include data.html %}
+
+<!-- to use this include in both posts' page and home page -->
+{% if page.collection == "posts" %}
+  {% assign _author = page.author %}
+{% else %}
+  {% assign _author = post.author %}
+{% endif %}
+
 <span class="author">
 
-  {% if page.author %}
-    {% if page.author.name %}
-      {% capture author %}{{page.author.name}}{% endcapture %}
+  {% if _author %}
+    {% if _author.name %}
+      {% capture author %}{{_author.name}}{% endcapture %}
     {% else %}
-      {% capture author %}{{page.author}}{% endcapture %}
+      {% capture author %}{{_author}}{% endcapture %}
     {% endif %}
 
-    {% if page.author.about %}
-      {% capture about %}{{ page.author.about }}{% endcapture %}
+    {% if _author.about %}
+      {% capture about %}{{ _author.about }}{% endcapture %}
       {% assign target = '_blank' %}
     {% endif %}
 
