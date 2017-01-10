@@ -256,3 +256,14 @@ body {
     border-bottom: .05em solid $gray-light;
   }
 }
+
+// helpers
+.unselectable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+}
