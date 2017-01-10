@@ -4,3 +4,4 @@ telephone: #yourphone
 github: #username
 stackoverflow: #username
 twitter: #username
+display_at_home: false # add writing `by` to posts in home
