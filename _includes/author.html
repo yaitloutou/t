@@ -7,25 +7,32 @@
   {% assign _author = post.author %}
 {% endif %}
 
+<!-- who is the author ?? -->
+{% if _author %}
+  {% if _author.name %} <!-- he has a name ? -->
+    {% capture author %}{{_author.name}}{% endcapture %}
+  {% else %} <!-- then, he is the name -->
+    {% capture author %}{{_author}}{% endcapture %}
+  {% endif %}
+
+  {% if _author.url %}
+    {% capture url %}{{ _author.url }}{% endcapture %}
+    {% assign target = '_blank' %} <!-- new tab -->
+  {% endif %}
+
+{% else %} <!-- post author not specified => use default  -->
+  {% if  page.collection == "posts" or admin.display_at_home != false %}
+      {% capture author %}{{ admin.name }}{% endcapture %}
+      {% assign url = '/about' %}
+      {% assign target = '_self' %}
+  {% endif %}
+{% endif %}
+<!-- end `who is` -->
+
+{% if author %}
 <span class="author">
 
-  {% if _author %}
-    {% if _author.name %} <!-- he has a name ? -->
-      {% capture author %}{{_author.name}}{% endcapture %}
-    {% else %} <!-- then, he is the name -->
-      {% capture author %}{{_author}}{% endcapture %}
-    {% endif %}
-
-    {% if _author.url %}
-      {% capture url %}{{ _author.url }}{% endcapture %}
-      {% assign target = '_blank' %} <!-- new tab -->
-    {% endif %}
-
-  {% else %} <!-- post author not specified => use defult  -->
-    {% capture author %}{{ admin.name }}{% endcapture %}
-    {% assign url = '/about' %}
-    {% assign target = '_self' %}
-  {% endif %}
+  by&nbsp;
 
   {% if url %}<a href={{url}} target={{target}} title="{{ author | lstrip }}" rel="author">{% endif %}
 
@@ -33,3 +40,4 @@
 
   {% if url %}</a>{% endif %}
 </span>
+{% endif %}
