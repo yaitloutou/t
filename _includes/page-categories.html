@@ -1,13 +1,20 @@
 {% include data.html %}
 
-{% if page.categories != empty %}		
+<!-- to use this include in both posts' page and home page -->
+{% if page.collection == "posts" %}
+  {% assign _categories = page.categories %}
+{% else %}
+  {% assign _categories = post.categories %}
+{% endif %}
+
+{% if _categories != empty %}
 <div id="categories" class="categories">
-	<ul aria-label="Categories" data-header="Categories">
-	{% for category in page.categories %}					
-		<li class="category cat-{{category}}">
-			<a href="{{website.baseurl}}/category/{{category | slugify}}">{{category | capitalize }}</a>
-		</li>
-	{% endfor%}	
-	</ul>						
+  <ul aria-label="Categories" data-header="Categories">
+  {% for category in _categories %}
+    <li class="category cat-{{category}}">
+      <a href="{{website.baseurl}}/category/{{category | slugify}}">{{category | capitalize }}</a>
+    </li>
+  {% endfor%}
+  </ul>
 </div>
 {% endif%}

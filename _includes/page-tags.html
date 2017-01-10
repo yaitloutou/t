@@ -1,13 +1,20 @@
 {% include data.html %}
 
-{% if page.tag != empty %} <!--yes, it's `tag` without `s`-->
+<!-- to use this include in both posts' page and home page -->
+{% if page.collection == "posts" %}
+  {% assign _tags = page.tag %} <!--yes, it's `page.tag` without `s`-->
+{% else %}
+  {% assign _tags = post.tag %} <!--yes, it's `post.tag` without `s`-->
+{% endif %}
+
+{% if _tags != empty %}
 <div id="tags" class="tags">
-	<ul aria-label="Tags" data-header="Tags">
-	{% for tag in page.tags %}					
-		<li class="tag tag-{{tag}}">
-			<a href="{{website.baseurl}}/tag/{{tag | slugify}}">{{tag | downcase}}</a>
-		</li>
-	{% endfor%}	
-	</ul>						
+  <ul aria-label="Tags" data-header="Tags">
+  {% for tag in _tags %}
+    <li class="tag tag-{{tag}}">
+      <a href="{{website.baseurl}}/tag/{{tag | slugify}}">{{tag | downcase}}</a>
+    </li>
+  {% endfor%}
+  </ul>
 </div>
 {% endif%}
