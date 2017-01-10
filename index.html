@@ -21,10 +21,10 @@ title: My Blog
       {{post.author}}
     {% endif %}
     {% if post.categories != empty %}
-    <div id="post-categories" class="info">{% include page-categories.html %}</div>
+    <div id="post-categories" class="info">{% include categories.html %}</div>
     {% endif %}
     {% if post.tag %}
-    <div id="post-tags"  class="info">{% include page-tags.html %}</div>
+    <div id="post-tags"  class="info">{% include tags.html %}</div>
     {% endif %}
   </footer>
 

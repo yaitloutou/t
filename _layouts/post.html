@@ -38,14 +38,14 @@ layout: default
             {% if page.categories != empty %}
             <div id="post-categories" class="info">
               <em>Categories</em>
-              {% include page-categories.html %}
+              {% include categories.html %}
             </div>
             {% endif%}
             {% comment %} Tags {% endcomment %}
             {% if page.tag %}
             <div id="post-tags"  class="info">
               <i class="fa fa-tags" aria-hidden="true"></i>
-              {% include page-tags.html %}
+              {% include tags.html %}
             </div>
             {% endif%}
           </footer>
@@ -59,11 +59,11 @@ layout: default
           <footer>
             {% comment %}  Categories {% endcomment %}
             {% if page.categories != empty %}
-            <div id="post-categories" class="info">{% include page-categories.html %}</div>
+            <div id="post-categories" class="info">{% include categories.html %}</div>
             {% endif %}
             {% comment %} Tags {% endcomment %}
             {% if page.tag %}
-            <div id="post-tags"  class="info">{% include page-tags.html %}</div>
+            <div id="post-tags"  class="info">{% include tags.html %}</div>
             {% endif %}
           </footer>
         </section>{% comment %} / post-content {% endcomment %}
