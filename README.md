@@ -425,7 +425,7 @@ sass:
 - [ ] searche
 - [x] back to top
 - [x] next/previous post
-- [ ] pagination
+- [x] pagination
 - [ ] contact form
 - [ ] disk comment
 - [x] drafts
@@ -498,7 +498,7 @@ taxonomy: tag
 ```
 I still need to refactor their respective generator into one too, and remove this 2 layouts
 
-### next/previous post
+#### next/previous post
 
 ```html
 <!-- Next/Prevous -->
@@ -516,7 +516,12 @@ I still need to refactor their respective generator into one too, and remove thi
 	{% endif %}
 </div>
 ```
+#### Pagenation
 
+[jekyll docs: pagination][j-pg]
+
+
+---
 
 [j-t]: https://jekyllrb.com/docs/templates/
 [j-rd]: http://www.rubydoc.info/github/mojombo/jekyll/Jekyll/
@@ -526,3 +531,4 @@ I still need to refactor their respective generator into one too, and remove thi
 [kd]: https://kramdown.gettalong.org/
 [rg]:http://rouge.jneen.net/
 [j-p]: https://jekyllrb.com/docs/plugins/
+[j-pg]: https://jekyllrb.com/docs/pagination/
