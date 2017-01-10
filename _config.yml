@@ -16,7 +16,7 @@ defaults:
     scope:
       path: "_pages"
     values:
-      layout: "page" 
+      layout: "page"
   -
     scope:
       path: "_posts"
@@ -31,7 +31,7 @@ exclude:
 # Plugins
 gems:
   - jekyll-assets
-
+  - jekyll-paginate
 # Conversion
 markdown:    kramdown
 highlighter: rouge
