@@ -1,0 +1,258 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+/**
+  Define your custom variables here
+  This will override variables from
+  ... bootstrap/_variables.scss
+**/
+$icon-font-path: "../fonts/bootstrap/" !default;
+$fa-font-path: "../fonts/fontawesome" !default;
+
+@import "_variables";
+
+// bootstrap variable settings here
+@import "bootstrap-scss/_bootstrap-custom-variables";
+@import "bootstrap-scss/_bootstrap-custom";
+@import "bootstrap-scss/theme/jumbotron-narrow"; //bootstrap theme
+// font awesome
+@import "font-awesome-scss/font-awesome";
+
+// add more css stuff here
+@import "code-highlight/github";
+@import "code-style";
+
+@import "retourn-to-top";
+
+
+/* Sticky.footer-top styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  font-family: $font-stack;
+  font-size: 1.8em;
+  /* Margin bottom by.footer height */
+  margin-bottom: $margin-bottom;
+}
+
+// footers
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the.footers here */
+  height: $footer-height;
+}
+/**** Sticky.footer-top styles ****/
+
+.footer-top {
+  background: #EDEFF1;
+  height: auto;
+  padding: .6em 0em .6em;
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #ddd;
+
+  a {
+    // background: $gray-light;
+    color: $gray-light;
+
+    font-size: 1.2em;
+    text-align: center;
+    vertical-align: middle;
+
+    width:2em;
+    max-width:2em; /* == width => fixed width */
+
+    display: inline-block;
+    position: relative;
+    padding: 0.2em 0.3em;
+    margin: .1em .2em;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      font-weight: bold;
+      color: $gray;
+      background-color: $gray-lighter;//$nav-link-hover-bg;
+    }
+  }
+
+}
+
+.footer-bottom {
+  color: $gray-lighter;
+  background-color: $gray;
+  border-top: 1px solid #ddd;
+  padding: .6em .6em 0em;
+
+  font-size: .8em;
+  cite {
+    color: white;
+    font-size: 1em;
+  }
+}
+// end footers
+
+
+// social
+.social {
+
+  > nav {
+    text-align: center;
+
+    > ul {
+      display: inline-block;
+
+      > li > a {
+
+        background: $gray-light;
+        color: $gray-lighter;
+
+        font-size: 1.2em;
+        text-align: center;
+        vertical-align: middle;
+
+        width:2em;
+        max-width:2em; /* == width => fixed width */
+
+        display: inline-block;
+        position: relative;
+        padding: 0.2em 0.3em;
+        margin: .1em .2em;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          font-weight: bold;
+          color: white;
+          background-color: $gray-darker;//$nav-link-hover-bg;
+        }
+      }
+    }
+  }
+} // end social
+
+// info, tags & categories
+.info {
+  padding: .15em 0;
+  em {
+    color: black;
+    font-size: .85em;
+    font-weight: 600;
+  }
+}
+
+.categories {
+  border-left: 1px solid #555555;
+  margin: -0.4em 0;
+  padding: 0 0 0 .4em;
+  display: inline-block;
+  > ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      background: $gray-lighter;
+      color: $gray-darker;
+
+      font-size: .8em;
+      text-align: center;
+      vertical-align: middle;
+
+      // width:2em;
+      // max-width:2em; /* == width => fixed width */
+
+      display: inline-block;
+      position: relative;
+      padding: .15em .3em;
+      margin: .1em .2em;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        // background-color: $gray-light;//$nav-link-hover-bg;
+        // color: white;
+      }
+    }
+  }
+}
+
+.tags {
+  border-left: 1px solid #555555;
+  margin: -0.4em 0;
+  padding: 0 0 0 .4em;
+  display: inline-block;
+
+  > ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      background: $gray-lighter;
+      color: $gray-darker;
+
+      font-size: .8em;
+      text-align: center;
+      vertical-align: middle;
+
+      // width:2em;
+      // max-width:2em; /* == width => fixed width */
+
+      display: inline-block;
+      position: relative;
+      padding: .15em .3em;
+      margin: .1em .2em;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: $gray-light;//$nav-link-hover-bg;
+        color: white;
+      }
+    }
+  }
+}
+// end info, tags & categories
+
+// next/prevs
+.page-nav {
+  margin: 1em 0;
+  padding: 0;
+
+  .next{
+    padding-right: 0;
+    float: right;
+    a {
+      float: right;
+    }
+  }
+  .prev{
+    padding-left: 0;
+    float: left;
+    a {
+      float: left;
+    }
+  }
+} // end next/prevs
+
+.post-core {
+  margin: .8em 0 .2em;
+  padding: 0em .0em .8em;
+  border-bottom: .2em solid #e5e5e5;
+
+  .post-content {
+    padding: .4em .4em .8em;
+  }
+}
+
+.post-header{
+  padding: 0em .0em .4em;
+  border-bottom: .1em solid $gray-light;
+
+  h1 {
+    border-bottom: .05em solid $gray-light;
+  }
+}

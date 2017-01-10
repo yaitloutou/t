@@ -1,0 +1,23 @@
+# file type
+*.gem
+
+# jekyll dotfile
+.bundle
+.sass-cache
+.jekyll-metadata
+Gemfile.lock
+
+# Directory
+_site
+## ignore during div
+_posts/**/*
+_drafts/**/*
+_bower_components
+
+# Helper
+gh-md-toc
+
+
+# Exceeption
+## `.gitkeep` are placeholder file, added to empty directory to create and keep
+!/**/.gitkeep

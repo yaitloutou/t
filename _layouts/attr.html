@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<!-- page-attributes -->
+<ul>
+	{%for attr in page %}
+	 <li>
+	 	{{attr}} : {{page[attr]}}
+	 </li>   
+	{%endfor%}
+</ul>

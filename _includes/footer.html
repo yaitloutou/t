@@ -1,0 +1,37 @@
+<!-- mini -->
+{% include data.html%}
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="raw">
+        <div class="col-lg-2 col-sm-2 col-xm-2">
+          <a href="/" title="Home"><i class="fa fa-home"></i></a>
+        </div>
+        <div class="social col-lg-8 col-sm-8 col-xm-8">
+          <nav>
+            {% for social in socials %}
+            <ul class="nav">
+              {% if social.active != false %}
+              <li>
+                <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
+                  <i class="fa fa-{{social.platform}}"></i>
+                  <!-- {{social.platform}} -->
+                </a>
+              </li>
+              {% endif%}
+            </ul>
+            {% endfor %}
+          </nav>
+        </div> <!--  / socials -->
+      </div> <!--  / .raw -->
+    </div> <!-- / .container -->
+  </div> <!--  / .footer-top -->
+  <div class="footer-bottom">
+    <div class="container">
+      <p>
+        &copy; 2017 - built by <cite>Younes Ait Loutou</cite>
+        with <cite>Jekyll</cite>, <cite>Bootstrap</cite> and a lot of <cite>&hearts;</cite>
+      </p>
+    </div>
+  </div><!-- / .footer-bottom -->
+</footer>

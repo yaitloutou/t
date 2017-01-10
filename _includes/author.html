@@ -1,0 +1,25 @@
+<span class="author">
+
+  {% if page.author %}
+    {% if page.author.name %}
+      {% capture author %}{{page.author.name}}{% endcapture %}
+    {% else %}
+      {% capture author %}{{page.author}}{% endcapture %}
+    {% endif %}
+
+    {% if page.author.about %}
+      {% capture about %}{{ page.author.about }}{% endcapture %}
+      {% assign target = '_blank' %}
+    {% endif %}
+
+  {% else %}
+    {% capture author %}{{ admin.name }}{% endcapture %}
+    {% assign about = '/about' %}
+    {% assign target = '_self' %}
+  {% endif %}
+
+  {% if about %}<a href={{about}} target={{target}} title="{{ author | lstrip }}" rel="author">{% endif %}
+
+  {{author}}
+  {% if about %}</a>{% endif %}
+</span>

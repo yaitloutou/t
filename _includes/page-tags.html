@@ -1,0 +1,13 @@
+{% include data.html %}
+
+{% if page.tag != empty %} <!--yes, it's `tag` without `s`-->
+<div id="tags" class="tags">
+	<ul aria-label="Tags" data-header="Tags">
+	{% for tag in page.tags %}					
+		<li class="tag tag-{{tag}}">
+			<a href="{{website.baseurl}}/tag/{{tag | slugify}}">{{tag | downcase}}</a>
+		</li>
+	{% endfor%}	
+	</ul>						
+</div>
+{% endif%}

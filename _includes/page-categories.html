@@ -1,0 +1,13 @@
+{% include data.html %}
+
+{% if page.categories != empty %}		
+<div id="categories" class="categories">
+	<ul aria-label="Categories" data-header="Categories">
+	{% for category in page.categories %}					
+		<li class="category cat-{{category}}">
+			<a href="{{website.baseurl}}/category/{{category | slugify}}">{{category | capitalize }}</a>
+		</li>
+	{% endfor%}	
+	</ul>						
+</div>
+{% endif%}

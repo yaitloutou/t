@@ -1,0 +1,10 @@
+{% include data.html %}
+<nav>
+	<ul class="nav nav-pills pull-right">
+		{% for page in site.pages %}
+			{% if page.title %}
+			<li role="presentation"><a href="{{ page.id }}">{{ page.title | escape }}</a></li>
+			{% endif %}
+		{% endfor %}		
+	</ul>
+</nav>

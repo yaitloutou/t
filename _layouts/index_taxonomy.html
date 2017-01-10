@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<h1>
+{{page.taxonomy | strip | capitalize}}: {{page.title | strip | capitalize}}
+</h1>
+
+<ul>
+{% for post in site.posts %}
+
+	{% if page.taxonomy == "category" %}
+		{% assign taxonomies = post.categories %}
+	{% elsif  page.taxonomy == "tag" %}
+		{% assign taxonomies = post.tag %}
+	{% endif%}
+
+	{% for post-taxonomy in taxonomies %}
+		{% capture tx %}{{ post-taxonomy | strip | downcase }}{% endcapture %}
+		{% capture tt %}{{ page.title | strip | downcase }}{% endcapture %}
+
+		{% if tx == tt %}
+			<li>
+			{{post.date | date: "%m-%d-%Y" }} &raquo;
+			<a href="{{post.id}}">{{post.title}}</a>
+			</li> <!-- ok -->
+		{% endif %}
+	{% endfor %}
+{% endfor %}
+</ul>
