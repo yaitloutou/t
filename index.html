@@ -17,12 +17,27 @@ title: Home
   {% endif %}
   {% comment %}post footer{% endcomment %}
   <footer>
+    <!-- author -->
+    by&nbsp;
     {% include author.html %}
+    <!-- date -->
+    on
+    <time datetime="{{post.date | date_to_xmlschema }}">
+    {{ post.date | date: "%d/%m/%y"}}
+    </time>
+    <!-- categories -->
     {% if post.categories != empty %}
-    <div id="post-categories" class="info">{% include categories.html %}</div>
+    <div id="post-categories" class="info">
+      in&nbsp;
+      {% include categories.html %}
+    </div>
     {% endif %}
+    <!-- tags -->
     {% if post.tag %}
-    <div id="post-tags"  class="info">{% include tags.html %}</div>
+    <div id="post-tags"  class="info">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      {% include tags.html %}
+    </div>
     {% endif %}
   </footer>
 

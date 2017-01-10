@@ -12,7 +12,7 @@ layout: default
           <li>
             <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
               <i class="fa fa-{{social.platform}}"></i>
-              {% comment %} {{social.platform}} {% endcomment %}
+              <!-- {{social.platform}} -->
             </a>
           </li>
           {% endif%}
@@ -26,22 +26,23 @@ layout: default
           <h1 id="post-title">{{page.title}}</h1>
           <footer id="post-detail">
             <div class="info">
-              {% comment %} Author {% endcomment %}
+              <!-- Author -->
               by
               {% include author.html %}
               on
-              {% comment %} Date  {% endcomment %}
+              <!-- Date  -->
               <time datetime="{{page.date | date_to_xmlschema }}">
-              {{ page.date | date: "%d/%m/%y"}}</time>
+              {{ page.date | date: "%d/%m/%y"}}
+              </time>
             </div>
-            {% comment %}  Categories {% endcomment %}
+            <!--  Categories -->
             {% if page.categories != empty %}
             <div id="post-categories" class="info">
               <em>Categories</em>
               {% include categories.html %}
             </div>
             {% endif%}
-            {% comment %} Tags {% endcomment %}
+            <!-- Tags -->
             {% if page.tag %}
             <div id="post-tags"  class="info">
               <i class="fa fa-tags" aria-hidden="true"></i>
@@ -50,24 +51,24 @@ layout: default
             {% endif%}
           </footer>
         </header>
-        {% comment %} post-content {% endcomment %}
+        <!-- post-content -->
         <section class="post-core">
           <div class="post-content">
           {{ content }}
           </div>
-          {% comment %} content footer {% endcomment %}
+          <!-- content footer -->
           <footer>
-            {% comment %}  Categories {% endcomment %}
+            <!--  Categories -->
             {% if page.categories != empty %}
             <div id="post-categories" class="info">{% include categories.html %}</div>
             {% endif %}
-            {% comment %} Tags {% endcomment %}
+            <!-- Tags -->
             {% if page.tag %}
             <div id="post-tags"  class="info">{% include tags.html %}</div>
             {% endif %}
           </footer>
-        </section>{% comment %} / post-content {% endcomment %}
-        {% comment %} Next/Prevous {% endcomment %}
+        </section><!-- / post-content -->
+        <!-- Next/Prevous -->
         <div class="page-nav col-xs-12">
           {% if page.next.url %}
           <div class="next col-lg-6 col-md-6 col-xs-12">
