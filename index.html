@@ -1,0 +1,46 @@
+---
+layout: default
+title: My Blog
+---
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+  <header>
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    {% if post.subtitle %}
+    <h2> {{post.subtitle}} </h2>
+    {% endif %}
+  </header>
+  {% comment %}desciption{% endcomment %}
+  {% if post.description %}
+    {{post.description}}
+  {% endif %}
+  {% comment %}post footer{% endcomment %}
+  <footer>
+    {% if post.author %}
+      {{post.author}}
+    {% endif %}
+    {% if post.categories != empty %}
+    <div id="post-categories" class="info">{% include page-categories.html %}</div>
+    {% endif %}
+    {% if post.tag %}
+    <div id="post-tags"  class="info">{% include page-tags.html %}</div>
+    {% endif %}
+  </footer>
+
+{% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+  {% else %}
+    <span class="previous">Previous</span>
+  {% endif %}
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% else %}
+    <span class="next ">Next</span>
+  {% endif %}
+</div>
