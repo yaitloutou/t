@@ -26,26 +26,22 @@ layout: default
           <h1 id="post-title">{{page.title}}</h1>
           <footer id="post-detail">
             <div class="info">
-              <!-- Author -->
-              by
-              {% include author.html %}
-              on
               <!-- Date  -->
-              <time datetime="{{page.date | date_to_xmlschema }}">
-              {{ page.date | date: "%d/%m/%y"}}
-              </time>
+              {% include dates.html %}
+              <!-- Author -->
+              {% include author.html %}
             </div>
             <!--  Categories -->
             {% if page.categories != empty %}
             <div id="post-categories" class="info">
-              <em>Categories</em>
+              <span class="unselectable" title="Categories">in&nbsp;</span>
               {% include categories.html %}
             </div>
             {% endif%}
             <!-- Tags -->
             {% if page.tag %}
             <div id="post-tags"  class="info">
-              <i class="fa fa-tags" aria-hidden="true"></i>
+              <i class="fa fa-tags" aria-hidden="true" title="Tags"></i>
               {% include tags.html %}
             </div>
             {% endif%}

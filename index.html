@@ -2,33 +2,32 @@
 layout: default
 title: Home
 ---
-
+{%include data.html%}
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
+<article>
   <header>
-    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
     {% if post.subtitle %}
-    <h2> {{post.subtitle}} </h2>
+    <h3> {{post.subtitle}} </h3>
     {% endif %}
-  </header>
-  {% comment %}desciption{% endcomment %}
-  {% if post.description %}
-    {{post.description}}
-  {% endif %}
-  {% comment %}post footer{% endcomment %}
-  <footer>
-    <!-- author -->
-    by&nbsp;
-    {% include author.html %}
     <!-- date -->
-    on
-    <time datetime="{{post.date | date_to_xmlschema }}">
-    {{ post.date | date: "%d/%m/%y"}}
-    </time>
+    <h4>
+    {% include dates.html %}
+    </h4>
+  </header>
+  <!--desciption-->
+  {% if post.description %}
+  <section>
+    {{post.description}}
+  </section>
+  {% endif %}
+  <!--post footer-->
+  <footer>
     <!-- categories -->
     {% if post.categories != empty %}
     <div id="post-categories" class="info">
-      in&nbsp;
+      <span class="unselectable" title="Categories">in&nbsp;</span>
       {% include categories.html %}
     </div>
     {% endif %}
@@ -39,8 +38,10 @@ title: Home
       {% include tags.html %}
     </div>
     {% endif %}
+    <!-- author -->
+    {% include author.html %}
   </footer>
-
+</article>
 {% endfor %}
 
 <!-- Pagination links -->
