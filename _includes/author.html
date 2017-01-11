@@ -30,14 +30,12 @@
 <!-- end `who is` -->
 
 {% if author %}
-<span class="author">
-
+<address class="author">
   by&nbsp;
-
   {% if url %}<a href={{url}} target={{target}} title="{{ author | lstrip }}" rel="author">{% endif %}
 
-  {{author}}
+  {{author | html_strip | strip}}
 
   {% if url %}</a>{% endif %}
-</span>
+</address>
 {% endif %}
