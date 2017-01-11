@@ -2,19 +2,17 @@
 layout: default
 ---
 {% include data.html %}
-
-
-<div class="col-md-10 col-xs-10">
+<div class="col-lg-12 col-md-12 col-xs-12">
 <article>
   <!-- page header -->
     <header class="page-header">
       <!-- title -->
-        <h2 class="page-title">{{page.title}}</h2>
+        <h2 class="page-title">{{page.title | upcase}}</h2>
         {% if page.subtitle %}
       <!-- subtitle -->
-        <div class="page-subtitle">{{ page.subtitle }}</div>
+        <div class="page-subtitle">{{ page.subtitle  | capitalize}}</div>
         {% endif %}
-      <!-- description -->
+      <!-- description --
         {% if page.description %}
         <div class="page-description">{{ page.description }}</div>
         {% endif %}
