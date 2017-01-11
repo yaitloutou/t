@@ -10,19 +10,21 @@
 $icon-font-path: "../fonts/bootstrap/" !default;
 $fa-font-path: "../fonts/fontawesome" !default;
 
+
 @import "_variables";
 
 // bootstrap variable settings here
 @import "bootstrap-scss/_bootstrap-custom-variables";
 @import "bootstrap-scss/_bootstrap-custom";
-@import "bootstrap-scss/theme/jumbotron-narrow"; //bootstrap theme
+// @import "bootstrap-scss/theme/jumbotron-narrow"; //bootstrap theme
 // font awesome
 @import "font-awesome-scss/font-awesome";
 
 // add more css stuff here
 @import "code-highlight/github";
 @import "code-style";
-
+@import "home-style";
+@import "taxonomies-style";
 @import "retourn-to-top";
 
 
@@ -148,76 +150,7 @@ body {
     }
   }
 
-  .categories {
-    border-left: 1px solid #555555;
-    margin: -0.4em 0;
-    padding: 0 0 0 .4em;
-    display: inline-block;
-    > ul {
-      float: left;
-      margin: 0;
-      padding: 0;
 
-      > li {
-        background: $gray-lighter;
-        color: $gray-darker;
-
-        font-size: .8em;
-        text-align: center;
-        vertical-align: middle;
-
-        // width:2em;
-        // max-width:2em; /* == width => fixed width */
-
-        display: inline-block;
-        position: relative;
-        padding: .15em .3em;
-        margin: .1em .2em;
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          // background-color: $gray-light;//$nav-link-hover-bg;
-          // color: white;
-        }
-      }
-    }
-  }
-
-  .tags {
-    border-left: 1px solid #555555;
-    margin: -0.4em 0;
-    padding: 0 0 0 .4em;
-    display: inline-block;
-
-    > ul {
-      float: left;
-      margin: 0;
-      padding: 0;
-
-      > li {
-        background: $gray-lighter;
-        color: $gray-darker;
-
-        font-size: .8em;
-        text-align: center;
-        vertical-align: middle;
-
-        // width:2em;
-        // max-width:2em; /* == width => fixed width */
-
-        display: inline-block;
-        position: relative;
-        padding: .15em .3em;
-        margin: .1em .2em;
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          background-color: $gray-light;//$nav-link-hover-bg;
-          color: white;
-        }
-      }
-    }
-  } // end info, tags & categories
 
 // post
   .post-header{
@@ -258,6 +191,8 @@ body {
       }
     }
   }
+
+
 
 
 // helpers
