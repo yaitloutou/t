@@ -9,17 +9,17 @@
 
 <!-- creation date -->
 <span class="date date-creation" title="published on: {{ publication.date | date: "%d/%m/%y"}}">
-<i class="fa fa-clock-o" aria-hidden="true" ></i>
+<i class="fa fa-clock-o" aria-hidden="true"></i>
 <time datetime="{{publication.date | date_to_xmlschema }}">
   {{ publication.date | date: "%d/%m/%y"}}
 </time>
 </span>
 <!-- last update date-->
-<span class="date date-update"  title="last update: {{ publication.last-modified-date | date: "%d/%m/%y"}}">
+<span class="date date-update"  title="last update: {{ publication.last-modified-date | date: "%d/%m/%y %R %P"}}">
 {% if publication.last-modified-date %}
 <time datetime="{{publication.last-modified-date | date_to_xmlschema }}">
   <i class="fa fa-refresh " aria-hidden="true"></i>
-  {{ publication.last-modified-date | date: "%d/%m/%y"}}
+  {{ publication.last-modified-date | date: "%d/%m/%y %R %P"}}
 </time>
 {% endif %}
 </span>
