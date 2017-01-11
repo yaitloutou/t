@@ -1,0 +1,54 @@
+.taxonomies {
+  border-left: 1px solid #555555;
+  margin: -0.4em 0;
+  padding: 0 0 0 .4em;
+  display: inline-block;
+  > ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      background: $gray-lighter;
+      color: $gray-dark;
+
+      font-size: .8em;
+      text-align: center;
+      vertical-align: middle;
+
+      // width:2em;
+      // max-width:2em; /* == width => fixed width */
+
+      display: inline-block;
+      position: relative;
+      padding: .15em .3em;
+      margin: .1em .2em;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        // background-color: $gray-light;//$nav-link-hover-bg;
+        // color: white;
+      }
+    }
+  }
+
+  a {
+    background: inherit;
+    color: $gray-darker;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      background-color: inherit;//$nav-link-hover-bg;
+      color: black;
+    }
+  }
+
+}
+
+.categories {
+
+}
+
+.tags {
+
+} // end info, tags & categories
