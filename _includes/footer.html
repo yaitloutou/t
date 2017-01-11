@@ -1,37 +1,44 @@
-<!-- mini -->
 {% include data.html%}
+<!-- main footers -->
 <footer class="footer">
+  <!-- footer-top -->
   <div class="footer-top">
-    <div class="container">
-      <div class="raw">
+    <!-- sitemap -->
+      <nav>
+        <h2 style="display: none;">sitemap</h2>
         <div class="col-lg-2 col-sm-2 col-xm-2">
-          <a href="/" title="Home"><i class="fa fa-home"></i></a>
+        <a href="/" title="Home"><i class="fa fa-home"></i></a>
         </div>
-        <div class="social col-lg-8 col-sm-8 col-xm-8">
-          <nav>
-            {% for social in socials %}
-            <ul class="nav">
-              {% if social.active != false %}
-              <li>
-                <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
-                  <i class="fa fa-{{social.platform}}"></i>
-                  <!-- {{social.platform}} -->
-                </a>
-              </li>
-              {% endif%}
-            </ul>
-            {% endfor %}
-          </nav>
-        </div> <!--  / socials -->
-      </div> <!--  / .raw -->
-    </div> <!-- / .container -->
+      </nav>
+    <!-- social -->
+      <nav class="social">
+        <h2>social media</h2>
+
+        {% for social in socials %}
+        <ul class="nav">
+          {% if social.active != false %}
+          <li>
+            <address>
+              <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
+                <i class="fa fa-{{social.platform}}"></i>
+                <span class="social-text">{{social.platform}}: {{social.username}}</span>
+              </a>
+            </address>
+          </li>
+          {% endif%}
+        </ul>
+        {% endfor %}
+      </nav>
   </div> <!--  / .footer-top -->
-  <div class="footer-bottom">
-    <div class="container">
-      <p>
-        &copy; 2017 - built by <cite>Younes Ait Loutou</cite>
-        with <cite>Jekyll</cite>, <cite>Bootstrap</cite> and a lot of <cite>&hearts;</cite>
-      </p>
-    </div>
-  </div><!-- / .footer-bottom -->
+
+  <!-- footer-bottom -->
+  <aside class="footer-bottom">
+      <h2>copyright</h2>
+      <span>
+        &copy; 2017 - Younes Ait Loutou
+      </span>
+      <span>
+        built by <cite>Younes Ait Loutou</cite>with <cite>Jekyll</cite>, <cite>Bootstrap</cite> and a lot of <cite>&hearts;</cite>
+      </span>
+  </aside><!-- / .footer-bottom -->
 </footer>

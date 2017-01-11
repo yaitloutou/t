@@ -2,19 +2,18 @@
 <html lang="en">
   {% include head.html %}
   <body>
+    {% include header.html %}
 
     <div class="container">
-      {% include header.html %}
-      <!-- {% include drawer.html %} -->
-      <main>
+      <div class="raw">
         {{ content }}
-      </main>
-
-<!-- Return to Top -->
-<a href="javascript:" id="return-to-top"><i class="fa fa-chevron-circle-up"></i></a>
-
+      </div>
+      <!-- Return to Top -->
+      <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-circle-up"></i></a>
     </div>
+
     {% include footer.html %}
-      {% include js.html %}
+
+    {% include js.html %}
   </body>
 </html>
