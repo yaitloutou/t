@@ -1,0 +1,73 @@
+@import "_variables";
+// bootstrap variable settings here
+@import "bootstrap-scss/_bootstrap-custom-variables";
+@import "bootstrap-scss/_bootstrap-custom";
+
+// posts
+main {
+  margin: 0;
+  padding: .4em 0;
+
+  article{
+    margin: 0 0 2em;
+    padding: 0;
+
+    header{
+      margin: 0;
+      padding: 0 2em;
+      background-color: $gray-dark;
+      color: white;
+
+
+      h2 {
+        margin: 0;
+        padding: .8em 0;
+        color: white;
+        text-transform: uppercase;
+        font-size: 1.6em;
+        font-family: inherit;
+        font-weight: bold;
+        line-height: 1.1;
+        box-sizing: border-box;
+        display: block;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+      }
+
+      a{
+        color: white;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          font-weight: bolder;
+          color: white;
+          //background-color: $gray-darker;//$nav-link-hover-bg;
+        }
+      }
+
+      .home-post-title{
+      }
+
+      .home-post-subtitle{
+        margin-top: -.8em;
+        padding-bottom: .8em;
+      }
+    }
+
+    .post-description{
+      background-color: white;
+      margin: 0;
+      padding: .3em 0;
+    }
+
+    footer{
+      background-color: white;
+      margin: 0;
+      padding: 0.3em 0 0.6em;
+      border-bottom: 0.1em solid #333333;
+      border-top: 0.1em solid #333333;
+    }
+  }
+}
