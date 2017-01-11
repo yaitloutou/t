@@ -2,69 +2,55 @@
 layout: default
 ---
 {% include data.html %}
-<div class="post-layout">
-  <div class="raw">
-    <div class="col-md-1 col-xs-1">
-      <nav>
-        {% for social in socials %}
-        <ul class="nav">
-          {% if social.active != false %}
-          <li>
-            <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
-              <i class="fa fa-{{social.platform}}"></i>
-              <!-- {{social.platform}} -->
-            </a>
-          </li>
-          {% endif%}
-        </ul>
-        {% endfor %}
-      </nav>
-    </div>
-    <div class="col-md-10 col-xs-10">
-      <article>
-        <header class="post-header">
-          <h1 id="post-title">{{page.title}}</h1>
-          <footer id="post-detail">
-            <div class="info">
-              <!-- Date  -->
+
+
+<div class="col-md-10 col-xs-10">
+<article>
+  <!-- page header -->
+    <header class="page-header">
+      <!-- title -->
+        <h2 class="page-title">{{page.title}}</h2>
+        {% if page.subtitle %}
+      <!-- subtitle -->
+        <div class="page-subtitle">{{ page.subtitle }}</div>
+        {% endif %}
+      <!-- description -->
+        {% if page.description %}
+        <div class="page-description">{{ page.description }}</div>
+        {% endif %}
+      <!-- details -->
+        <div class="post-detail">
+          <div class="info">
+            <!-- date  -->
               {% include dates.html %}
-              <!-- Author -->
+            <!-- author -->
               {% include author.html %}
-            </div>
-            <!--  Categories -->
-            {% if page.categories != empty %}
-            <div id="post-categories" class="info">
-              <span class="unselectable" title="Categories">in&nbsp;</span>
-              {% include categories.html %}
-            </div>
-            {% endif%}
-            <!-- Tags -->
-            {% if page.tag %}
-            <div id="post-tags"  class="info">
-              <i class="fa fa-tags" aria-hidden="true" title="Tags"></i>
-              {% include tags.html %}
-            </div>
-            {% endif%}
-          </footer>
-        </header>
-        <!-- post-content -->
-        <section class="post-core">
-          <div class="post-content">
-          {{ content }}
           </div>
-          <!-- content footer -->
-          <footer>
-            <!--  Categories -->
+          <!--  categories and tags -->
+          {% include taxonomies.html %}
+        </div>
+    </header>
+  <!-- page main -->
+    <div class="page-main">
+      <!-- post-content -->
+        <div class="post-content">
+          {{ content }}
+        </div>
+      <!-- post-main footer -->
+        <footer>
+          <!-- categories -->
             {% if page.categories != empty %}
-            <div id="post-categories" class="info">{% include categories.html %}</div>
+            <span class="info">{% include categories.html %}</span>
             {% endif %}
-            <!-- Tags -->
+          <!-- tags -->
             {% if page.tag %}
-            <div id="post-tags"  class="info">{% include tags.html %}</div>
+            <span class="info">{% include tags.html %}</span>
             {% endif %}
-          </footer>
-        </section><!-- / post-content -->
-        <!-- Next/Prevous -->
+        </footer>
+    </div><!-- / post-core -->
+  <!-- page footer -->
+    <footer class="page-footer">
+      <!-- Next/Previous -->
         <div class="page-nav col-xs-12">
           {% if page.next.url %}
           <div class="next col-lg-6 col-md-6 col-xs-12">
@@ -76,10 +62,8 @@ layout: default
             <a href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
           </div>
           {% endif %}
-        </div>
-      </article>
-    </div>
-    <div class="col-md-1">
-    </div>
-  </div>
+        </div><!--  / Next/Previous  -->
+    </footer>
+</article>
 </div>
+

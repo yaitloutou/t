@@ -3,58 +3,71 @@ layout: default
 title: Home
 ---
 {%include data.html%}
-<!-- This loops through the paginated posts -->
-{% for post in paginator.posts %}
-<article>
-  <header>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    {% if post.subtitle %}
-    <h3> {{post.subtitle}} </h3>
-    {% endif %}
-    <!-- date -->
-    <h4>
-    {% include dates.html %}
-    </h4>
-  </header>
-  <!--desciption-->
-  {% if post.description %}
-  <section>
-    {{post.description}}
-  </section>
-  {% endif %}
-  <!--post footer-->
-  <footer>
-    <!-- categories -->
-    {% if post.categories != empty %}
-    <div id="post-categories" class="info">
-      <span class="unselectable" title="Categories">in&nbsp;</span>
-      {% include categories.html %}
-    </div>
-    {% endif %}
-    <!-- tags -->
-    {% if post.tag %}
-    <div id="post-tags"  class="info">
-      <i class="fa fa-tags" aria-hidden="true"></i>
-      {% include tags.html %}
-    </div>
-    {% endif %}
-    <!-- author -->
-    {% include author.html %}
-  </footer>
-</article>
-{% endfor %}
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-  {% else %}
-    <span class="previous">Previous</span>
-  {% endif %}
-  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-  {% else %}
-    <span class="next ">Next</span>
-  {% endif %}
-</div>
+<section>
+  <!-- page header -->
+    <header class="page-header">
+      <!-- title -->
+      <h2 class="page-title">{{page.title}}</h2>
+      {% if page.subtitle %}
+      <!-- subtitle -->
+      <div class="page-subtitle">{{ page.subtitle }}</div>
+      {% endif %}
+      <!-- description -->
+      {% if page.description %}
+      <div class="page-description">{{ page.description }}</div>
+      {% endif %}
+    </header>
+
+  <!-- page main -->
+    <main>
+      <!-- This loops through the paginated posts -->
+        {% for post in paginator.posts %}
+        <article>
+          <!-- post header -->
+            <header>
+              <h2><a href="{{post.url}}">{{ post.title }}</a></h2>
+              {% if post.subtitle %}
+              <div class="subtitle"> {{post.subtitle}} </div>
+              {% endif %}
+              <!-- date -->
+              <div class="dates">
+              {% include dates.html %}
+              </div>
+            </header>
+          <!-- post desciption-->
+            {% if post.description %}
+              <div class="post-description">
+              {{post.description}}
+              </div>
+            {% endif %}
+          <!-- post footer-->
+            <footer>
+              <!-- categories and tags -->
+                {% include taxonomies.html %}
+              <!-- author -->
+                {% include author.html %}
+            </footer>
+        </article>
+        {% endfor %}
+    </main>
+
+  <!-- page footer -->
+    <footer>
+      <!-- Pagination links -->
+        <div class="pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+          {% else %}
+            <span class="previous">Previous</span>
+          {% endif %}
+          <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+          {% else %}
+            <span class="next ">Next</span>
+          {% endif %}
+        </div>
+    </footer>
+</section>
+
