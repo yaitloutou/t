@@ -24,12 +24,14 @@ layout: default
         {% for post in paginator.posts %}
         <article>
           <!-- post header -->
-            <header>
-              <h2 class="home-post-title"><a href="{{post.url}}">{{ post.title }}</a></h2>
-              {% if post.subtitle %}
-              <div class="home-post-subtitle"> {{post.subtitle}} </div>
-              {% endif %}
-            </header>
+            <a href="{{post.url}}">
+              <header>
+                <h2 class="home-post-title">{{ post.title }}</h2>
+                {% if post.subtitle %}
+                <div class="home-post-subtitle"> {{post.subtitle}} </div>
+                {% endif %}
+              </header>
+            </a>
           <!-- post desciption-->
             {% if post.description %}
               <div class="post-description">

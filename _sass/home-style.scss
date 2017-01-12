@@ -12,6 +12,17 @@ main {
     margin: 0 0 2em;
     padding: 0;
 
+    a{
+      color: white;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        // font-weight: bolder;
+        color: white;
+        //background-color: $gray-darker;//$nav-link-hover-bg;
+      }
+    }
+
     header{
       margin: 0;
       padding: 0 2em;
@@ -19,6 +30,10 @@ main {
       color: white;
 
       h2 {
+
+      }
+
+      .home-post-title{
         margin: 0;
         padding: .8em 0;
         color: white;
@@ -33,20 +48,6 @@ main {
         -webkit-margin-after: 0;
         -webkit-margin-start: 0;
         -webkit-margin-end: 0;
-      }
-
-      a{
-        color: white;
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          // font-weight: bolder;
-          color: white;
-          //background-color: $gray-darker;//$nav-link-hover-bg;
-        }
-      }
-
-      .home-post-title{
       }
 
       .home-post-subtitle{
@@ -72,44 +73,42 @@ main {
 } // / main
 
 .pagination {
-    display: inline;
-    margin: 0;
-    padding: 0;
+  display: inline;
+  margin: 0;
+  padding: 0;
 
-    > div {
-      display: inline-block;
+  > div {
+    display: inline-block;
+    color: $gray;
+  }
+
+  a {
+    // background: $gray-light;
+    color: $gray-light;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      // background-color: $gray;//$nav-link-hover-bg;
       color: $gray;
     }
+  }
 
-    a {
-      // background: $gray-light;
-      color: $gray-light;
-
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        // background-color: $gray;//$nav-link-hover-bg;
-        color: $gray;
-      }
+  .pagination-next {
+    float: right;
+    text-align: right;
+    i {
+      padding-right: .2em;
     }
+  }
 
-    .pagination-next {
-      float: right;
-      text-align: right;
-      i {
-        padding-right: .2em;
-      }
-    }
+  .pagination-prev{
+    float: left;
+  }
 
-    .pagination-prev{
-      float: left;
-    }
-
-    .pagination-number {
-      text-align: center;
-    }
-
-
+  .pagination-number {
+    text-align: center;
+  }
 } // / pagination
 
 .center-h {
