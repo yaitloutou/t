@@ -5,18 +5,18 @@
     <div class="pagination-prev {{hide-prev}}">
       <a href="{{ paginator.previous_page_path }}">
         <i class="fa fa-angle-left" aria-hidden="true" title="Previous"></i>
-        Previous
+        previous
       </a>
     </div>
 
     <div class="center-h pagination-number">
-    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+    page: {{ paginator.page }} of {{ paginator.total_pages }}
     </div>
 
     {% if paginator.next_page == nil %}{% assign hide-next = "hide" %} {% endif %}
     <div class="pagination-next {{hide-next}}">
       <a href="{{ paginator.next_page_path }}" class="next">
-        Next
+        next
         <i class="fa fa-angle-right" aria-hidden="true" title="Next"></i>
       </a>
     </div>
