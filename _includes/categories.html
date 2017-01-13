@@ -12,7 +12,7 @@
   <ul aria-label="Categories" data-header="Categories">
   {% for category in _categories %}
     <li class="category cat-{{category}}">
-      <a href="{{website.baseurl}}/category/{{category | slugify}}">{{category | capitalize }}</a>
+      <a href="{{site.baseurl}}/category/{{category | slugify}}">{{category | capitalize }}</a>
     </li>
   {% endfor%}
   </ul>
