@@ -12,7 +12,7 @@
   <ul aria-label="Tags" data-header="Tags">
   {% for tag in _tags %}
     <li class="tag tag-{{tag}}">
-      <a href="{{website.baseurl}}/tag/{{tag | slugify}}">{{tag | downcase}}</a>
+      <a href="{{site.baseurl}}/tag/{{tag | slugify}}">{{tag | downcase}}</a>
     </li>
   {% endfor%}
   </ul>
