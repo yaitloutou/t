@@ -2,6 +2,11 @@
   username: yaitloutou
   profile: https://twitter.com/yaitloutou
 
+- platform: facebook
+  username: y.aitloutou
+  profile: https://facebook.com/y.aitloutou
+  active: false
+
 - platform: skype
   username: yaitloutou
   profile: https://twitter.com/yaitloutou
@@ -14,7 +19,3 @@
   username: yaitloutou
   profile: https://stackoverflow.com/users/2245329/yaitloutou?tab=profile
 
-- platform: facebook
-  username: y.aitloutou
-  profile: https://facebook.com/y.aitloutou
-  active: false
