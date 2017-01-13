@@ -1,7 +1,4 @@
 name: "Younes Ait Loutou" #mandatory
 email: "youremail@domain.com"
-telephone: #yourphone
-github: #username
-stackoverflow: #username
-twitter: #username
+telephone: (+0) 000 000 000
 display_at_home: false # add writing `by` to posts in home
