@@ -26,6 +26,7 @@ $fa-font-path: "../fonts/fontawesome" !default;
 @import "home-style";
 @import "taxonomies-style";
 @import "retourn-to-top";
+@import "nav-style";
 
 
 /* Sticky.footer-top styles
@@ -150,8 +151,6 @@ body {
     }
   }
 
-
-
 // post
   .post-header{
     padding: 0em .0em .4em;
@@ -192,16 +191,25 @@ body {
     }
   }
 
-
-
+// author
+  .author {
+    a {
+        color: $gray-light;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: $gray;
+        }
+      }
+  }
 
 // helpers
-.unselectable {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  cursor: default;
-}
+  .unselectable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+  }
