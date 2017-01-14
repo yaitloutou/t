@@ -1,11 +1,17 @@
 ---
-<!-- layout: default -->
 ---
 <!-- page-attributes -->
-<ul>
+<!-- <ul>
   {%for attr in page %}
    <li>
     {{attr}} : {{page[attr]}}
    </li>
   {%endfor%}
 </ul>
+
+<hr>
+-->
+{% include data.html %}
+{% assign _links = nav-links %}
+{% include sitemap.html links=_links %}
+{{site.sitemap}}

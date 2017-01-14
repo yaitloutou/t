@@ -1,0 +1,30 @@
+<ul>
+
+  {%for link in include.links %}
+
+    <li>
+
+      {% for part in link %}
+        {{part[0]}} :
+
+        {% if part[1].first %}
+
+          {% assign _links = "" | split: "" %}
+          {% for _link in part[1] %}
+            {% assign _links = _links | push: _link %}
+          {% endfor %}
+
+          {% include sitemap.html links = _links %}
+
+        {% else %}
+
+          {{part[1]}}
+
+        {% endif %}
+
+      {% endfor%}
+
+    </li>
+
+  {%endfor%}
+</ul>
