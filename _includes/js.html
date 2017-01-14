@@ -11,3 +11,17 @@
 
 <!-- return-to-top.js -->
 <script src="/assets/js/return-to-top.js"></script>
+
+<!-- dropdown submenu -->
+<script>
+(function($){
+  $(document).ready(function(){
+    $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).parent().siblings().removeClass('open');
+      $(this).parent().toggleClass('open');
+    });
+  });
+})(jQuery);
+</script>
