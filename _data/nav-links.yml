@@ -1,4 +1,9 @@
-home : ""
-contact : "contact"
-about: "about"
-
+- home : "/"
+- contact : "/contact"
+- about: "/about"
+- archive:
+  - categoreies: '/categoreies'
+  - tags: '/tags'
+  - misc:
+    - old-stuff: 'old'
+    - older-stuff: 'older'

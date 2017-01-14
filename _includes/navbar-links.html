@@ -1,0 +1,28 @@
+<ul class="links {{include.ul-class}}">
+  {% for link-entry in include.links %}
+    {% for _part in link-entry %}
+
+      {% if _part[1].first %}
+
+        <li class="dropdown {{include.li-submenu-class}}">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {{_part[0] | capitalize }}
+            <span class="caret"></span>
+          </a>
+        {% assign _links = "" | split: "" %}
+        {% for _link in _part[1] %}
+          {% assign _links = _links | push: _link %}
+        {% endfor %}
+
+        {% include navbar-links.html links = _links ul-class="dropdown-menu" li-submenu-class= "dropdown-submenu" %}
+        </li>
+      {% else %}
+
+        {% include navbar-link.html link = _part %}
+
+      {% endif %}
+
+    {% endfor%}
+
+  {% endfor %}
+</ul>

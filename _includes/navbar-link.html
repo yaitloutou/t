@@ -1,5 +1,6 @@
 {% capture before %}{{ include.link[1] | split: "://" | first }}{% endcapture %}
 {% capture after %}{{ include.link[1] | split: "://" | last }}{% endcapture %}
+
 {% assign internal = true %}
 {% if before != after %}
   {% if before == "http" or before == "https" %}
@@ -8,20 +9,21 @@
 {% endif %}
 
 {% if internal %}
-  {% capture linkurl %}{{ site.baseurl }}/{{ include.link[1] }}{% endcapture %}
+
+  {% capture link_url %}{{ site.baseurl }}{{ include.link[1] }}{% endcapture %}
+
   {% comment %}is active ?{% endcomment %}
-  {% if page.id ==  linkurl %}
+  {% if page.id == link_url %}
     {% assign active = "active" %}
-  {% elsif page.id == "" or page.id == nil and linkurl == '/' %}
+  {% elsif page.id == "" or page.id == nil and link_url == '/' %}
     {% assign active = "active" %}
   {% else %}
     {% assign active = "" %}
   {%endif%}
-
 {% else %}
-  {% capture linkurl %}{{ include.link[1] }}{% endcapture %}
+  {% capture link_url %}{{ include.link[1] }}{% endcapture %}
 {% endif %}
 
 <li class="{{active}}" >
-<a href="{{ linkurl }}">{{ include.link[0] }}</a>
+<a href="{{ link_url }}">{{ include.link[0] | capitalize }}</a>
 </li>
