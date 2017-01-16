@@ -12,10 +12,10 @@ layout: default
       <!-- subtitle -->
         <div class="page-subtitle">{{ page.subtitle  | capitalize}}</div>
         {% endif %}
-      <!-- description --
-        {% if page.description %}
+      <!-- description -->
+        {% comment %}{% if page.description %}
         <div class="page-description">{{ page.description }}</div>
-        {% endif %}
+        {% endif %}{% endcomment %}
       <!-- details -->
         <div class="post-detail">
           <div class="info">
