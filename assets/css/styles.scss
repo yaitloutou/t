@@ -27,7 +27,8 @@ $fa-font-path: "../fonts/fontawesome" !default;
 @import "taxonomies-style";
 @import "retourn-to-top";
 @import "nav-style";
-
+@import "header-style";
+@import "social-style";
 
 /* Sticky.footer-top styles
 -------------------------------------------------- */
@@ -102,44 +103,7 @@ body {
     }
   } // end footers
 
-// social
-  .social {
 
-    text-align: center;
-
-    > ul {
-      display: inline-block;
-
-      address> a {
-
-        background: $gray-light;
-        color: $gray-lighter;
-
-        font-size: 1.2em;
-        text-align: center;
-        vertical-align: middle;
-
-        width:2em;
-        max-width:2em; /* == width => fixed width */
-
-        display: inline-block;
-        position: relative;
-        padding: 0.2em 0.3em;
-        margin: .1em .2em;
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          font-weight: bold;
-          color: white;
-          background-color: $gray-darker;//$nav-link-hover-bg;
-        }
-      }
-    }
-
-    .social-text {
-      display: none;
-    }
-  } // end social
 
 // info, tags & categories
   .info {
@@ -213,3 +177,21 @@ body {
     user-select: none;
     cursor: default;
   }
+
+/* Flatten das boostrap */
+.navbar, .navbar-inverse,  .navbar-inner, .well, .popover, .btn, .tooltip, input, select, textarea, pre, .progress, .modal, .add-on, .alert, .table-bordered, .nav>.active>a, .dropdown-menu, .tooltip-inner, .badge, .label, .img-polaroid {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+  border-collapse: collapse !important;
+  background-image: none !important;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
