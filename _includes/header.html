@@ -1,9 +1,53 @@
 {% include data.html%}
-<header class="header clearfix">
-	<h1 class="text-muted">
-		<a href={{ "/" | relative_url}}>{{website.title}} </a>
-	</h1>
-  <div class="website-description">
-    {{website.description}}
+<header class=" header clearfix website-header">
+  <div class="container">
+    <div class="row">
+      <!-- titles -->
+      <div class="col-xs-12 col-md-6 col-lg-6 vcenter">
+          <div style="height:100%;">
+            <h1 class="website-title">
+              <a href={{ "/" | relative_url}}>{{website.title}} </a>
+            </h1>
+
+            {% if website.subtitle %}
+              <h2 class="website-subtitle">
+                {{website.subtitle}}
+              </h2>
+            {% endif%}
+
+            {% if website.description %}
+              <div class="website-description">
+                {{website.description}}
+              </div>
+            {% endif %}
+          </div>
+      </div><!--
+      --><div class="col-xs-12 col-md-6 col-lg-6 vcenter">
+          <div class="social-container">
+            <nav class="social">
+              <div class="social-title">
+                <h2>let's get in touch </h2>
+              </div>
+              <div>
+                <ul class="nav" >
+                {% for social in socials %}
+                  {% if social.active != false %}
+                  <li>
+                    <address>
+                      <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
+                        <i class="fa fa-{{social.platform}}"></i>
+                        <span class="social-text">{{social.platform}}: {{social.username}}</span>
+                      </a>
+                    </address>
+                  </li>
+                  {% endif%}
+                {% endfor %}
+                </ul>
+              </div>
+              <div style="clear: both"></div>
+            </nav>
+          </div>
+      </div>
+    </div><!--  / row  -->
   </div>
 </header>
