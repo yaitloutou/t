@@ -1,0 +1,86 @@
+@import "_variables";
+@import "bootstrap-scss/_bootstrap-custom-variables";
+
+// social
+  .social {
+    float: right;
+    display: block;
+
+    > div {
+      float: left;
+    }
+
+    .social-title {
+      margin: 0;
+      padding: 0 1em 0 .5em;
+      display: inline-block;
+
+      h2 {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+
+        font-style: italic;
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 1em;
+        line-height: 1.1;
+
+        color: whith;
+
+        -webkit-margin-before: 0.83em;
+        -webkit-margin-after: 0.83em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+      }
+    }
+
+    ul {
+
+      text-align: right;
+      display: inline-block;
+
+      address {
+        margin: 0;
+        line-height: 0;
+      }
+
+      address> a {
+
+        background: $gray-light;
+        color: $gray-lighter;
+
+        font-size: 1.2em;
+        font-style: inherit;
+
+        text-align: center;
+        vertical-align: middle;
+
+
+        line-height: 1.6em;
+        width:2em;
+        max-width:2em; /* == width => fixed width */
+
+        display: inline-block;
+        position: relative;
+        padding: 0.2em 0.3em;
+        margin: .1em .2em;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          font-weight: bold;
+          color: white;
+          background-color: $gray-darker;//$nav-link-hover-bg;
+        }
+      }
+
+      > li {
+        display: inline-block;
+      }
+    }
+
+    .social-text {
+      display: none;
+    }
+  } // end social
+
