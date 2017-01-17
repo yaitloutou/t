@@ -11,24 +11,7 @@
         </div>
       </nav>
     <!-- social -->
-      <nav class="social">
-        <h2>social media</h2>
 
-        {% for social in socials %}
-        <ul class="nav">
-          {% if social.active != false %}
-          <li>
-            <address>
-              <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
-                <i class="fa fa-{{social.platform}}"></i>
-                <span class="social-text">{{social.platform}}: {{social.username}}</span>
-              </a>
-            </address>
-          </li>
-          {% endif%}
-        </ul>
-        {% endfor %}
-      </nav>
   </div> <!--  / .footer-top -->
 
   <!-- footer-bottom -->

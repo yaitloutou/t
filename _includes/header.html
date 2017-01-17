@@ -22,31 +22,8 @@
             {% endif %}
           </div>
       </div><!--
-      --><div class="col-xs-12 col-md-6 col-lg-6 vcenter">
-          <div class="social-container">
-            <nav class="social">
-              <div class="social-title">
-                <h2>let's get in touch </h2>
-              </div>
-              <div>
-                <ul class="nav" >
-                {% for social in socials %}
-                  {% if social.active != false %}
-                  <li>
-                    <address>
-                      <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
-                        <i class="fa fa-{{social.platform}}"></i>
-                        <span class="social-text">{{social.platform}}: {{social.username}}</span>
-                      </a>
-                    </address>
-                  </li>
-                  {% endif%}
-                {% endfor %}
-                </ul>
-              </div>
-              <div style="clear: both"></div>
-            </nav>
-          </div>
+   --><div class="col-xs-12 col-md-6 col-lg-6 vcenter">
+        {% include social.html %}
       </div>
     </div><!--  / row  -->
   </div>

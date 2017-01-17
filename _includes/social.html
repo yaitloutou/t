@@ -1,0 +1,32 @@
+<div class="social-container">
+  <nav class="social">
+    <div class="social-title">
+      <h2>let's get in touch </h2>
+    </div>
+    <div>
+      <ul class="nav" >
+        {% for social in socials %}
+        {% if social.active != false %}
+        <li>
+          <address>
+            {% if social.platform == "email" %}
+              <a href="mailto:{{social.username}}" title="mail to: {{social.username}}">
+                <i class="fa fa-envelope"></i>
+                <span class="social-text">{{social.platform}}: {{social.username}}</span>
+              </a>
+
+            {% else %}
+              <a href="{{social.profile}}" title="{{social.platform}}: {{social.username}}" target="_blank">
+                <i class="fa fa-{{social.platform}}"></i>
+                <span class="social-text">{{social.platform}}: {{social.username}}</span>
+              </a>
+            {% endif%}
+          </address>
+        </li>
+        {% endif%}
+        {% endfor %}
+      </ul>
+    </div>
+    <div style="clear: both"></div>
+  </nav>
+</div>

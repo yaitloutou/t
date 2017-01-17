@@ -31,7 +31,8 @@
 
 {% if author %}
 <span class="author">
-  by&nbsp;
+
+  <i class="fa fa-pencil" aria-hidden="true" title="by {{ author | lstrip }}"></i>
   {% if url %}<a href={{url}} target={{target}} title="{{ author | lstrip }}" rel="author">{% endif %}
 
   {{author | html_strip | strip}}

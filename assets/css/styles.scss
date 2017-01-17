@@ -29,6 +29,8 @@ $fa-font-path: "../fonts/fontawesome" !default;
 @import "nav-style";
 @import "header-style";
 @import "social-style";
+@import "footer-style";
+@import "post-style";
 
 /* Sticky.footer-top styles
 -------------------------------------------------- */
@@ -43,68 +45,9 @@ body {
   margin-bottom: $margin-bottom;
 }
 
-// footers
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the.footers here */
-    height: $footer-height;
-
-    h2 {
-      display: none;
-    }
-  }
-  /**** Sticky.footer-top styles ****/
-
-  .footer-top {
-    background: #EDEFF1;
-    height: auto;
-    padding: .6em 0em .6em;
-    position: relative;
-    width: 100%;
-    border-top: 1px solid #ddd;
-
-    a {
-      // background: $gray-light;
-      color: $gray-light;
-
-      font-size: 1.2em;
-      text-align: center;
-      vertical-align: middle;
-
-      width:2em;
-      max-width:2em; /* == width => fixed width */
-
-      display: inline-block;
-      position: relative;
-      padding: 0.2em 0.3em;
-      margin: .1em .2em;
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        font-weight: bold;
-        color: $gray;
-        background-color: $gray-lighter;//$nav-link-hover-bg;
-      }
-    }
-  }
-
-  .footer-bottom {
-    color: $gray-lighter;
-    background-color: $gray;
-    border-top: 1px solid #ddd;
-    padding: .6em .6em 0em;
-
-    font-size: .8em;
-    cite {
-      color: white;
-      font-size: 1em;
-    }
-  } // end footers
-
-
-
+#main-navbar {
+  margin-bottom: 0;
+}
 // info, tags & categories
   .info {
     padding: .15em 0;
@@ -112,46 +55,6 @@ body {
       color: black;
       font-size: .85em;
       font-weight: 600;
-    }
-  }
-
-// post
-  .post-header{
-    padding: 0em .0em .4em;
-    border-bottom: .1em solid $gray-light;
-
-    h1 {
-      border-bottom: .05em solid $gray-light;
-    }
-  }
-
-  .post-core {
-    margin: .8em 0 .2em;
-    padding: 0em .0em .8em;
-    border-bottom: .2em solid #e5e5e5;
-
-    .post-content {
-      padding: .4em .4em .8em;
-    }
-  }
-
-  .page-nav {
-    margin: 1em 0;
-    padding: 0;
-
-    .next{
-      padding-right: 0;
-      float: right;
-      a {
-        float: right;
-      }
-    }
-    .prev{
-      padding-left: 0;
-      float: left;
-      a {
-        float: left;
-      }
     }
   }
 
@@ -191,7 +94,10 @@ body {
 }
 
 .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
 }
+
+* html .group { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */

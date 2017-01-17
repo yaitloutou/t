@@ -1,3 +1,6 @@
+- platform: email
+  username: yaitloutou@gmail.com #email address
+
 - platform: twitter
   username: yaitloutou
   profile: https://twitter.com/yaitloutou
@@ -10,6 +13,7 @@
 - platform: skype
   username: yaitloutou
   profile: https://twitter.com/yaitloutou
+  active: false
 
 - platform: github
   username: yaitloutou
