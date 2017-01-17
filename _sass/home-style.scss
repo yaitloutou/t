@@ -2,10 +2,15 @@
 @import "bootstrap-scss/_bootstrap-custom-variables";
 
 
+// section
+section {
+  padding: 0 0 2em;
+}
+
 // posts
 main {
-  margin: 0;
-  padding: .4em 0;
+
+  padding: .1em 0;
 
   article{
     margin: 0 0 2em;
@@ -66,6 +71,7 @@ main {
     }
   } // / main>article
 } // / main
+
 
 .pagination {
   display: inline;

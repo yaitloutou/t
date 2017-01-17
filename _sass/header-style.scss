@@ -1,9 +1,15 @@
 @import "_variables";
 @import "bootstrap-scss/_bootstrap-custom-variables";
 
+.clearfix:after {
+    content:" ";
+    display:table;
+    clear:both;
+}
+
 .website-header {
   margin: 0;
-  padding: 0;
+  padding: .4em 0;
   background-color: $gray;
   color: white;
 

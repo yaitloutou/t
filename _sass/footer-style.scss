@@ -1,0 +1,63 @@
+// footers
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the.footers here */
+    height: $footer-height;
+
+    h2 {
+      display: none;
+    }
+  }
+  /**** Sticky.footer-top styles ****/
+
+  .footer-top {
+    background: #EDEFF1;
+    height: auto;
+    padding: .6em 0em .6em;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #ddd;
+
+    a {
+      // background: $gray-light;
+      color: $gray-light;
+
+      font-size: 1.2em;
+      text-align: center;
+      vertical-align: middle;
+
+      width:2em;
+      max-width:2em; /* == width => fixed width */
+
+      display: inline-block;
+      position: relative;
+      padding: 0.2em 0.3em;
+      margin: .1em .2em;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        font-weight: bold;
+        color: $gray;
+        background-color: $gray-lighter;//$nav-link-hover-bg;
+      }
+    }
+
+    div {
+      float: none;
+    }
+  }
+
+  .footer-bottom {
+    color: $gray-lighter;
+    background-color: $gray;
+    border-top: 1px solid #ddd;
+    padding: .6em .6em 0em;
+
+    // font-size: .8em;
+    cite {
+      color: white;
+      font-size: 1em;
+    }
+  } // end footers

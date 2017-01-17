@@ -1,0 +1,54 @@
+.page-header{
+  padding: 0em .0em .4em;
+  border-bottom: .1em solid $gray-light;
+
+  h1 {
+    border-bottom: .05em solid $gray-light;
+  }
+}
+
+.page-titles {
+  margin: 0;
+  padding: .8em 0;
+
+  > .page-title{
+    margin: 0;
+    padding: 0;
+
+  }
+
+  > .page-subtitle {
+    margin: 0;
+    padding: .4 0 0;
+  }
+}
+
+.page-main {
+  margin: .8em 0 .2em;
+  padding: 0em .0em .8em;
+  border-bottom: .2em solid #e5e5e5;
+
+  .page-content {
+    padding: .4em .4em .8em;
+  }
+}
+
+.page-nav {
+  margin: 1em 0;
+  padding: 0;
+
+  .next{
+    padding-right: 0;
+    float: right;
+    a {
+      float: right;
+    }
+  }
+  .prev{
+    padding-left: 0;
+    float: left;
+    a {
+      float: left;
+    }
+  }
+}
