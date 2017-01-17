@@ -10,9 +10,16 @@
         <li>
           <address>
             {% if social.platform == "email" %}
-              <a href="mailto:{{social.username}}" title="mail to: {{social.username}}">
+              {% comment %}if no username is specified for email, use admin.email{% endcomment %}
+              {% if social.username %}
+                {% assign email-address = social.username %}
+              {% elsif admin.email %}
+                {% assign email-address = admin.email %}
+              {% endif %}
+
+              <a href="mailto:{{email-address}}" title="email: {{email-address}}">
                 <i class="fa fa-envelope"></i>
-                <span class="social-text">{{social.platform}}: {{social.username}}</span>
+                <span class="social-text">email: {{email-address}}</span>
               </a>
 
             {% else %}
