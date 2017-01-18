@@ -1,0 +1,12 @@
+<header class="page-header">
+  <!-- title -->
+  <h2 class="page-title">{{page.taxonomy | strip | capitalize}}: {{page.title | strip | capitalize}}</h2>
+  {% if page.subtitle %}
+  <!-- subtitle -->
+  <div class="page-subtitle">{{ page.subtitle | strip | capitalize}}</div>
+  {% endif %}
+  <!-- description -->
+  {% if page.description %}
+  <div class="page-description">{{ page.description }}</div>
+  {% endif %}
+</header>
