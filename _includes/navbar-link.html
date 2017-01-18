@@ -25,5 +25,12 @@
 {% endif %}
 
 <li class="{{active}}" >
-<a href="{{ link_url }}">{{ include.link[0] | capitalize }}</a>
+  <a href="{{ link_url }}">
+    {% if include.icon %}
+    <i class="{{ include.icon }}" title="{{ include.link[0] | capitalize }}"></i>
+    {% endif %}
+    {% unless include.icon and include.hidetext == 'true' %}
+    {{ include.link[0] | capitalize }}
+    {% endunless %}
+  </a>
 </li>
