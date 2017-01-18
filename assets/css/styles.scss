@@ -40,7 +40,7 @@ html {
 }
 body {
   font-family: $font-stack;
-  font-size: 1.8em;
+  font-size: 1.6em;
   /* Margin bottom by.footer height */
   margin-bottom: $margin-bottom;
 }
@@ -99,5 +99,9 @@ body {
   float: none;
 }
 
-* html .group { zoom: 1; } /* IE6 */
-*:first-child+html .group { zoom: 1; } /* IE7 */
+.inline-content{
+  display: block;
+  div {
+    display: inline-block;
+  }
+}
