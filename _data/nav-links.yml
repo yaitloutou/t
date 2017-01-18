@@ -1,9 +1,9 @@
 - home : "/"
+  icon: "fa fa-home"
+  hidetext: true
 - contact : "/contact"
 - about: "/about"
 - archive:
-  - categoreies: '/categoreies'
-  - tags: '/tags'
-  - misc:
-    - old-stuff: 'old'
-    - older-stuff: 'older'
+  - posts: '/archive/posts'
+  - tags: '/archive/tags'
+  - categoreies: '/archive/categories/'
