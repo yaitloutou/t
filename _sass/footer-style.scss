@@ -15,26 +15,75 @@
   .footer-top {
     background: #EDEFF1;
     height: auto;
-    padding: .6em 0em .6em;
+    padding: .6em;
     position: relative;
     width: 100%;
     border-top: 1px solid #ddd;
 
-    a {
+    // a {
+    //   // background: $gray-light;
+    //   color: $gray-light;
+
+    //   font-size: 1.2em;
+    //   text-align: center;
+    //   vertical-align: middle;
+
+    //   width:2em;
+    //   max-width:2em; /* == width => fixed width */
+
+    //   display: inline-block;
+    //   position: relative;
+    //   padding: 0.2em 0.3em;
+    //   margin: .1em .2em;
+    //   &:hover,
+    //   &:focus {
+    //     text-decoration: none;
+    //     font-weight: bold;
+    //     color: $gray;
+    //     background-color: $gray-lighter;//$nav-link-hover-bg;
+    //   }
+    // }
+
+    .sitemap {
+      margin: 0;
+      padding: 0;
+      display: block;
+
+      h2 {
+        display: none;
+      }
+
+      div {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        // display: inline-block;
+        margin: 0;
+        padding: 0;
+        >li {
+          display: inline;
+        }
+      }
+
+
+      a {
       // background: $gray-light;
       color: $gray-light;
 
-      font-size: 1.2em;
+      font-size: .9em;
       text-align: center;
       vertical-align: middle;
 
-      width:2em;
-      max-width:2em; /* == width => fixed width */
+      // width:2em;
+      // max-width:2em; /* == width => fixed width */
 
-      display: inline-block;
+      display: inline;
       position: relative;
-      padding: 0.2em 0.3em;
-      margin: .1em .2em;
+      padding: 0;//.2em 0.3em;
+      margin: 0 .3em;
       &:hover,
       &:focus {
         text-decoration: none;
@@ -42,6 +91,7 @@
         color: $gray;
         background-color: $gray-lighter;//$nav-link-hover-bg;
       }
+    }
     }
 
     div {
@@ -56,8 +106,13 @@
     padding: .6em .6em 0em;
 
     // font-size: .8em;
-    cite {
+    cite,a {
       color: white;
       font-size: 1em;
     }
+
+    .fb-copyright{
+
+    }
+
   } // end footers

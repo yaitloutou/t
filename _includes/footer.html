@@ -1,13 +1,17 @@
 {% include data.html%}
 <!-- main footers -->
-<footer class="footer">
+<footer class="footer ">
   <!-- footer-top -->
   <div class="footer-top">
     <!-- sitemap -->
-      <nav>
-        <h2 style="display: none;">sitemap</h2>
-        <div class="col-lg-2 col-sm-2 col-xm-2">
-        <a href="/" title="Home"><i class="fa fa-home"></i></a>
+      <nav class="sitemap">
+        <h2>sitemap</h2>
+{% comment %}        <div class="col-lg-2 col-sm-2 col-xm-2 -home">
+          <a href="/" title="Home"><i class="fa fa-home"></i></a>
+        </div>{% endcomment %}
+            <!-- links -->
+        <div>
+          {% include navbar-links.html links = nav-links  ul-class = "nav navbar-nav" %}
         </div>
       </nav>
     <!-- social -->
@@ -15,13 +19,13 @@
   </div> <!--  / .footer-top -->
 
   <!-- footer-bottom -->
-  <aside class="footer-bottom">
+  <aside class="footer-bottom clearfix">
       <h2>copyright</h2>
-      <span>
+      <span class="fb-copyright">
         &copy; 2017 - Younes Ait Loutou
       </span>
-      <span>
-        built by <cite>Younes Ait Loutou</cite>with <cite>Jekyll</cite>, <cite>Bootstrap</cite> and a lot of <cite>&hearts;</cite>
+      <span class="pull-right fb-message">
+        Built by <cite><a href="{{site.baseurl}}">Younes Ait Loutou</a></cite> with <cite><a href="https://jekyllrb.com/" target="_blank">Jekyll</a></cite>, <cite><a href="http://getbootstrap.com/">Bootstrap</a></cite> and a lot of <cite class="love">&hearts;</cite>
       </span>
   </aside><!-- / .footer-bottom -->
 </footer>
