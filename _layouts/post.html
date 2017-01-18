@@ -2,7 +2,7 @@
 layout: default
 ---
 {% include data.html %}
-<div class="col-lg-12 col-md-12 col-xs-12">
+<div class="col-lg-8 col-lg-offset-2 col-md-12 col-md-offset-2 col-xs-12">
 <article>
   <!-- page header -->
     <header class="page-header">
@@ -34,14 +34,14 @@ layout: default
           {{ content }}
         </div>
       <!-- post-main footer -->
-        <footer>
+        <footer class="inline-content">
           <!-- categories -->
             {% if page.categories != empty %}
-            <span class="info">{% include categories.html %}</span>
+            <div class="info">{% include categories.html %}</div>
             {% endif %}
           <!-- tags -->
             {% if page.tag %}
-            <span class="info">{% include tags.html %}</span>
+            <div class="info">{% include tags.html %}</div>
             {% endif %}
         </footer>
     </div><!-- / post-core -->
